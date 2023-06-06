@@ -21,7 +21,8 @@ lsb-release \
 systemd-journal-remote -y
 
 # Install Docker-CE
-curl -fsSL get.docker.com | sh
+# curl -fsSL get.docker.com | sh
+curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
 
 # Install OS-Agent
 rm /tmp/os-agent.deb
