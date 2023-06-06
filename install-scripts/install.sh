@@ -38,5 +38,5 @@ gdbus introspect --system --dest io.hass.os --object-path /io/hass/os
 sleep 5
 
 # Install supervised package
-curl -LJo /tmp/homeassistant-supervised.deb https://kgithub.com/home-assistant/supervised-installer/releases/latest/download/homeassistant-supervised.deb /tmp/homeassistant-supervised.deb
+curl -LJo /tmp/homeassistant-supervised.deb https://kgithub.com/home-assistant/supervised-installer/releases/latest/download/homeassistant-supervised.deb
 apt install /tmp/homeassistant-supervised.deb
