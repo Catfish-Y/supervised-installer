@@ -25,7 +25,7 @@ curl -fsSL get.docker.com | sh
 
 # Install OS-Agent
 rm /tmp/os-agent.deb
-tag=$(curl -s https://api.github.com/home-assistant/os-agent/releases/latest | grep tag_name | cut -f4 -d "\"")
+tag=$(curl -s https://api.github.com/repos/home-assistant/os-agent/releases/latest | grep tag_name | cut -f4 -d "\"")
 echo "$tag"
 if [ ! "$tag" ]; then
   echo '未获取到版本号'
