@@ -35,8 +35,8 @@ curl -LJo /tmp/os-agent_x86_64.deb https://kgithub.com/home-assistant/os-agent/r
 dpkg -i /tmp/os-agent_x86_64.deb
 
 gdbus introspect --system --dest io.hass.os --object-path /io/hass/os
-sleep 10
+sleep 5
 
 # Install supervised package
-wget -qO https://kgithub.com/home-assistant/supervised-installer/releases/latest/download/homeassistant-supervised.deb /tmp/homeassistant-supervised.deb
+curl -LJo /tmp/homeassistant-supervised.deb https://kgithub.com/home-assistant/supervised-installer/releases/latest/download/homeassistant-supervised.deb /tmp/homeassistant-supervised.deb
 apt install /tmp/homeassistant-supervised.deb
