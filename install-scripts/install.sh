@@ -1,4 +1,4 @@
-# wget -qLO - https://kgithub.com/Catfish-Y/supervised-installer/raw/main/install-scripts/install.sh
+# bash -c "$(wget -qLO - https://kgithub.com/Catfish-Y/supervised-installer/raw/main/install-scripts/install.sh)"
 
 # Change-Source
 sed -i "s@http://deb.debian.org@https://mirrors.ustc.edu.cn/@g" /etc/apt/sources.list
