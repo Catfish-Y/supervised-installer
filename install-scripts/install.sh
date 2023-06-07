@@ -40,6 +40,6 @@ sleep 5
 
 # Install supervised package
 rm /tmp/homeassistant-supervised.deb
-# curl -LJo /tmp/homeassistant-supervised.deb https://kgithub.com/home-assistant/supervised-installer/releases/latest/download/homeassistant-supervised.deb
-curl -LJo /tmp/homeassistant-supervised.deb https://kgithub.com/home-assistant/supervised-installer/releases/download/1.0.2/homeassistant-supervised.deb
+curl -LJo /tmp/homeassistant-supervised.deb https://kgithub.com/home-assistant/supervised-installer/releases/latest/download/homeassistant-supervised.deb
+# curl -LJo /tmp/homeassistant-supervised.deb https://kgithub.com/home-assistant/supervised-installer/releases/download/1.0.2/homeassistant-supervised.deb
 apt install /tmp/homeassistant-supervised.deb
