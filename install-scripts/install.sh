@@ -38,8 +38,25 @@ dpkg -i /tmp/os-agent_x86_64.deb
 gdbus introspect --system --dest io.hass.os --object-path /io/hass/os
 sleep 5
 
+# Change_docker_registry
+if [ -d /etc/docker ];then
+  cat << EOF > /etc/docker/daemon.json 
+    { 
+    "log-driver": "journald",
+    "storage-driver": "overlay2",
+    "registry-mirrors": [ 
+    "https://hub-mirror.c.163.com",
+    "https://docker.mirrors.ustc.edu.cn"
+    ]
+    }
+EOF
+    systemctl daemon-reload
+    systemctl restart docker > /dev/null
+fi
+
+
 # Install supervised package
 rm /tmp/homeassistant-supervised.deb
-curl -LJo /tmp/homeassistant-supervised.deb https://kgithub.com/home-assistant/supervised-installer/releases/latest/download/homeassistant-supervised.deb
-# curl -LJo /tmp/homeassistant-supervised.deb https://kgithub.com/home-assistant/supervised-installer/releases/download/1.0.2/homeassistant-supervised.deb
+# curl -LJo /tmp/homeassistant-supervised.deb https://kgithub.com/home-assistant/supervised-installer/releases/latest/download/homeassistant-supervised.deb
+curl -LJo /tmp/homeassistant-supervised.deb https://kgithub.com/home-assistant/supervised-installer/releases/download/1.0.2/homeassistant-supervised.deb
 apt install /tmp/homeassistant-supervised.deb
