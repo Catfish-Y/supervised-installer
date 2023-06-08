@@ -25,7 +25,7 @@ systemd-journal-remote -y
 curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
 
 # Install OS-Agent
-if [ -d /tmp/os-agent.deb ];then
+if [ -f "/tmp/os-agent.deb" ];then
   rm /tmp/os-agent.deb
 fi
 tag=$(curl -s https://api.github.com/repos/home-assistant/os-agent/releases/latest | grep tag_name | cut -f4 -d "\"")
@@ -41,7 +41,7 @@ gdbus introspect --system --dest io.hass.os --object-path /io/hass/os
 sleep 5
 
 # Change_docker_registry
-if [ -d /etc/docker ];then
+if [ -d "/etc/docker" ];then
   cat << EOF > /etc/docker/daemon.json 
     { 
     "log-driver": "journald",
@@ -58,7 +58,7 @@ fi
 
 
 # Install supervised package
-if [ -d /tmp/homeassistant-supervised.deb ];then
+if [ -f "/tmp/homeassistant-supervised.deb" ];then
   rm /tmp/homeassistant-supervised.deb
 fi
 # curl -LJo /tmp/homeassistant-supervised.deb https://kgithub.com/home-assistant/supervised-installer/releases/latest/download/homeassistant-supervised.deb
