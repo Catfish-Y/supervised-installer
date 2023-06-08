@@ -25,7 +25,9 @@ systemd-journal-remote -y
 curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
 
 # Install OS-Agent
-rm /tmp/os-agent.deb
+if [ -d /tmp/os-agent.deb ];then
+  rm /tmp/os-agent.deb
+fi
 tag=$(curl -s https://api.github.com/repos/home-assistant/os-agent/releases/latest | grep tag_name | cut -f4 -d "\"")
 echo "$tag"
 if [ ! "$tag" ]; then
@@ -56,7 +58,9 @@ fi
 
 
 # Install supervised package
-rm /tmp/homeassistant-supervised.deb
+if [ -d /tmp/homeassistant-supervised.deb ];then
+  rm /tmp/homeassistant-supervised.deb
+fi
 # curl -LJo /tmp/homeassistant-supervised.deb https://kgithub.com/home-assistant/supervised-installer/releases/latest/download/homeassistant-supervised.deb
 curl -LJo /tmp/homeassistant-supervised.deb https://kgithub.com/home-assistant/supervised-installer/releases/download/1.0.2/homeassistant-supervised.deb
 apt install /tmp/homeassistant-supervised.deb
