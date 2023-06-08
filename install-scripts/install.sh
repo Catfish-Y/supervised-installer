@@ -23,6 +23,7 @@ systemd-journal-remote -y
 # Install Docker-CE
 # curl -fsSL get.docker.com | sh
 curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun
+sleep 3
 
 # Install OS-Agent
 if [ -f "/tmp/os-agent.deb" ];then
