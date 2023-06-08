@@ -29,7 +29,7 @@ sleep 3
 if [ -f "/tmp/os-agent.deb" ];then
   rm /tmp/os-agent.deb
 fi
-tag=$(curl -s https://api.github.com/repos/home-assistant/os-agent/releases/latest | grep tag_name | cut -f4 -d "\"")
+tag=$(curl -s https://api.kgithub.com/repos/home-assistant/os-agent/releases/latest | grep tag_name | cut -f4 -d "\"")
 echo "$tag"
 if [ ! "$tag" ]; then
   echo '未获取到版本号'
