@@ -42,20 +42,20 @@ gdbus introspect --system --dest io.hass.os --object-path /io/hass/os
 sleep 5
 
 # Change_docker_registry
-if [ -d "/etc/docker" ];then
-  cat << EOF > /etc/docker/daemon.json 
-    { 
-    "log-driver": "journald",
-    "storage-driver": "overlay2",
-    "registry-mirrors": [ 
-    "https://hub-mirror.c.163.com",
-    "https://docker.mirrors.ustc.edu.cn"
-    ]
-    }
-EOF
-    systemctl daemon-reload
-    systemctl restart docker > /dev/null
-fi
+# if [ -d "/etc/docker" ];then
+#   cat << EOF > /etc/docker/daemon.json 
+#     { 
+#     "log-driver": "journald",
+#     "storage-driver": "overlay2",
+#     "registry-mirrors": [ 
+#     "https://hub-mirror.c.163.com",
+#     "https://docker.mirrors.ustc.edu.cn"
+#     ]
+#     }
+# EOF
+#     systemctl daemon-reload
+#     systemctl restart docker > /dev/null
+# fi
 
 
 # Install supervised package
