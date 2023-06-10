@@ -62,7 +62,7 @@ sleep 5
 if [ -f "/tmp/homeassistant-supervised.deb" ];then
   rm /tmp/homeassistant-supervised.deb
 fi
-# curl -LJo /tmp/homeassistant-supervised.deb https://kgithub.com/home-assistant/supervised-installer/releases/latest/download/homeassistant-supervised.deb
+curl -LJo /tmp/homeassistant-supervised.deb https://kgithub.com/home-assistant/supervised-installer/releases/latest/download/homeassistant-supervised.deb
 # curl -LJo /tmp/homeassistant-supervised.deb https://kgithub.com/home-assistant/supervised-installer/releases/download/1.0.2/homeassistant-supervised.deb
-curl -LJo /tmp/homeassistant-supervised.deb https://kgithub.com/home-assistant/supervised-installer/releases/download/1.1.1/homeassistant-supervised.deb
+# curl -LJo /tmp/homeassistant-supervised.deb https://kgithub.com/home-assistant/supervised-installer/releases/download/1.1.1/homeassistant-supervised.deb
 apt install /tmp/homeassistant-supervised.deb
